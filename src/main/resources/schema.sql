@@ -1,0 +1,13 @@
+
+CREATE TABLE IF NOT EXISTS myuser (
+  user_id SERIAL PRIMARY KEY,
+  username VARCHAR(100) NOT NULL UNIQUE,
+  password VARCHAR(100) NOT NULL,
+  telephone VARCHAR(100) NOT NULL,
+  email VARCHAR(100) NOT NULL UNIQUE,
+  created TIMESTAMP WITHOUT TIME ZONE DEFAULT now(),
+  enabled BOOLEAN DEFAULT TRUE,
+  account_expired BOOLEAN DEFAULT FALSE,
+  account_locked BOOLEAN DEFAULT FALSE,
+  credentials_expired BOOLEAN DEFAULT FALSE
+);
